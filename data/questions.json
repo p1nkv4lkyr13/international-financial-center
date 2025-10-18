@@ -1,0 +1,32 @@
+[
+    {
+        "subject": "General Knowledge",
+        "question": "What is the capital of France?",
+        "answer": "Paris",
+        "answered": false
+    },
+    {
+        "subject": "Science",
+        "question": "What is the chemical symbol for water?",
+        "answer": "H2O",
+        "answered": false
+    },
+    {
+        "subject": "History",
+        "question": "Who was the first president of the United States?",
+        "answer": "George Washington",
+        "answered": false
+    },
+    {
+        "subject": "Math",
+        "question": "What is 2 + 2?",
+        "answer": "4",
+        "answered": false
+    },
+    {
+        "subject": "Geography",
+        "question": "What is the largest country in the world by area?",
+        "answer": "Russia",
+        "answered": false
+    }
+]
