@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     // Load questions from JSON file
     $.ajax({
-        url: '/data/questions.json',
+        url: '/international-financial-center/data/questions.json',
         dataType: 'json',
         success: function (data) {
             questions = data;
