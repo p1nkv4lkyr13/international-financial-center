@@ -149,4 +149,22 @@ $(document).ready(function () {
     // Initial log
     logAction('User logged in.');
     updateTotalBalance();
+
+    // Load news for the ticker
+    function loadNews() {
+        $.ajax({
+            url: 'data/news.json',
+            dataType: 'json',
+            success: function (data) {
+                const newsTicker = $('#news-ticker');
+                let headlines = data.map(item => item.headline).join(' | ');
+                newsTicker.html(`<p>${headlines}</p>`);
+            },
+            error: function () {
+                console.error('Failed to load news.');
+            },
+        });
+    }
+
+    loadNews();
 });
