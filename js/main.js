@@ -21,7 +21,10 @@ $(document).ready(function () {
         url: 'data/questions.json',
         dataType: 'json',
         success: function (data) {
-            questions = data;
+            // Shuffle the array
+            const shuffled = data.sort(() => 0.5 - Math.random());
+            // Get the first 50
+            questions = shuffled.slice(0, 50);
             renderQuestionList();
             logAction('Questions loaded.');
         },
@@ -167,4 +170,22 @@ $(document).ready(function () {
     }
 
     loadNews();
+
+    // Load rewards for the ticker
+    function loadRewards() {
+        $.ajax({
+            url: 'data/reward.json',
+            dataType: 'json',
+            success: function (data) {
+                const rewardTicker = $('#reward-ticker');
+                let rewards = data.map(item => `${item.name} ${item.action} - ${item.time}`).join(' | ');
+                rewardTicker.html(`<p>${rewards}</p>`);
+            },
+            error: function () {
+                console.error('Failed to load rewards.');
+            },
+        });
+    }
+
+    loadRewards();
 });

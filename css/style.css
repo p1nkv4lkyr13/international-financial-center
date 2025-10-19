@@ -79,3 +79,11 @@ body {
         transform: translateX(-100%);
     }
 }
+
+.footer .row:first-child {
+    background-color: #f8f9fa; /* light gray */
+}
+
+.footer .row:last-child {
+    background-color: #ffffff; /* white */
+}
