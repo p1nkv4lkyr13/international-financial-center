@@ -174,7 +174,7 @@ $(document).ready(function () {
     // Load rewards for the ticker
     function loadRewards() {
         $.ajax({
-            url: 'data/reward.json',
+            url: 'data/rewards.json',
             dataType: 'json',
             success: function (data) {
                 const rewardTicker = $('#reward-ticker');
