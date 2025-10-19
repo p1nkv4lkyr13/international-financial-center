@@ -28,7 +28,7 @@ $(document).ready(function () {
             renderQuestionList();
             logAction('Questions loaded.');
         },
-        error: function () {
+        error: function (err) {
             alert('Failed to load questions.');
         },
     });
@@ -160,10 +160,10 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 const newsTicker = $('#news-ticker');
-                let headlines = data.map(item => item.headline).join(' | ');
+                let headlines = data.map((item) => item.headline).join(' | ');
                 newsTicker.html(`<p>${headlines}</p>`);
             },
-            error: function () {
+            error: function (err) {
                 console.error('Failed to load news.');
             },
         });
@@ -178,10 +178,12 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 const rewardTicker = $('#reward-ticker');
-                let rewards = data.map(item => `${item.name} ${item.action} - ${item.time}`).join(' | ');
+                let rewards = data
+                    .map((item) => `${item.name} ${item.action} - ${item.time}`)
+                    .join(' | ');
                 rewardTicker.html(`<p>${rewards}</p>`);
             },
-            error: function () {
+            error: function (err) {
                 console.error('Failed to load rewards.');
             },
         });
